@@ -116,31 +116,63 @@ export function Header() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden overflow-hidden"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="md:hidden fixed inset-0 z-50 bg-white"
             >
-              <nav className="py-4 bg-white shadow-lg rounded-lg mt-2">
-                <div className="flex flex-col space-y-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={(e) => {
-                        if (item.href === '/') {
-                          e.preventDefault()
-                          handleNavClick(item.href)
-                        }
-                      }}
-                      className="text-lg font-medium text-gray-700 hover:text-primary transition-colors px-4"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between p-4 border-b">
+                  <Link 
+                    href="/" 
+                    className="flex items-center space-x-3"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                      <span className="text-2xl font-bold text-white">СЛ</span>
+                    </div>
+                    <span className="text-xl font-bold text-primary">Свои Люди</span>
+                  </Link>
+                  <button
+                    className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <X className="h-6 w-6 text-gray-700" />
+                  </button>
                 </div>
-              </nav>
+                
+                <nav className="flex-1 overflow-y-auto">
+                  <div className="flex flex-col space-y-1 p-4">
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={(e) => {
+                          if (item.href === '/') {
+                            e.preventDefault()
+                            handleNavClick(item.href)
+                          }
+                          setIsMenuOpen(false)
+                        }}
+                        className="text-lg font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-all px-4 py-3 rounded-lg"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </nav>
+
+                <div className="p-4 border-t">
+                  <a
+                    href="tel:+79857196200"
+                    className="flex items-center justify-center gap-2 bg-primary text-white px-4 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                  >
+                    <Phone className="w-5 h-5" />
+                    +7 (985) 719-62-00
+                  </a>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
