@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-inter' }
 export const metadata: Metadata = {
   title: 'Свои Люди - Профессиональный переезд',
   description: 'Профессиональные услуги по переезду любой сложности. Гарантируем качество, надежность и безопасность вашего имущества.',
+  icons: {
+    icon: '/images/icons8.png',
+    shortcut: '/images/icons8.png',
+    apple: '/images/icons8.png',
+  },
 }
 
 export default function RootLayout({
