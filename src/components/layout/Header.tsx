@@ -38,12 +38,12 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           <Link 
             href="/" 
-            className="flex items-center space-x-2 text-2xl font-bold text-primary hover:text-primary-dark transition-colors"
+            className="flex items-center space-x-3"
           >
-            <Users className="w-8 h-8" />
-            <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-              Свои Люди
-            </span>
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-2xl font-bold text-white">СЛ</span>
+            </div>
+            <span className="text-xl font-bold text-primary">Свои Люди</span>
           </Link>
 
           {/* Desktop Navigation */}
