@@ -16,7 +16,7 @@ export default function Home() {
         <AnimatedServices />
 
         {/* Преимущества */}
-        <section className="section bg-muted/50">
+        <section className="section">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="mb-4">Почему выбирают нас</h2>

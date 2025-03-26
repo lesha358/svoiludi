@@ -32,11 +32,11 @@ export default function ContactsPage() {
       <Header />
       
       <main className="pt-20">
-        <section className="py-20 bg-gray-50">
+        <section className="section">
           <div className="container">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Контакты</h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Свяжитесь с нами для получения дополнительной информации или заказа услуги
               </p>
             </div>
@@ -44,7 +44,7 @@ export default function ContactsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Контактная информация */}
               <div className="space-y-8">
-                <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="card">
                   <h2 className="text-xl font-bold mb-6">Наши контакты</h2>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
@@ -52,8 +52,8 @@ export default function ContactsPage() {
                         <Phone className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-gray-500">Телефон</h3>
-                        <a href="tel:+79857196200" className="text-base text-gray-900 hover:text-primary transition-colors">
+                        <h3 className="text-sm font-medium text-muted-foreground">Телефон</h3>
+                        <a href="tel:+79857196200" className="text-base hover:text-primary transition-colors">
                           +7 (985) 719-62-00
                         </a>
                       </div>
@@ -64,8 +64,8 @@ export default function ContactsPage() {
                         <Mail className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-gray-500">Email</h3>
-                        <a href="mailto:info@svoiludi.ru" className="text-base text-gray-900 hover:text-primary transition-colors">
+                        <h3 className="text-sm font-medium text-muted-foreground">Email</h3>
+                        <a href="mailto:info@svoiludi.ru" className="text-base hover:text-primary transition-colors">
                           info@svoiludi.ru
                         </a>
                       </div>
@@ -76,8 +76,8 @@ export default function ContactsPage() {
                         <MapPin className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-medium text-gray-500">Адрес</h3>
-                        <p className="text-base text-gray-900">
+                        <h3 className="text-sm font-medium text-muted-foreground">Адрес</h3>
+                        <p className="text-base">
                           г. Москва, ул. Примерная, д. 123
                         </p>
                       </div>
@@ -85,22 +85,22 @@ export default function ContactsPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="card">
                   <h2 className="text-xl font-bold mb-6">Режим работы</h2>
                   <div className="space-y-2">
-                    <p className="text-base text-gray-600">Пн-Пт: 9:00 - 20:00</p>
-                    <p className="text-base text-gray-600">Сб: 10:00 - 18:00</p>
-                    <p className="text-base text-gray-600">Вс: Выходной</p>
+                    <p className="text-base text-muted-foreground">Пн-Пт: 9:00 - 20:00</p>
+                    <p className="text-base text-muted-foreground">Сб: 10:00 - 18:00</p>
+                    <p className="text-base text-muted-foreground">Вс: Выходной</p>
                   </div>
                 </div>
               </div>
 
               {/* Форма обратной связи */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="card">
                 <h2 className="text-2xl font-bold mb-6">Обратная связь</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1">
                       Ваше имя
                     </label>
                     <input
@@ -109,13 +109,13 @@ export default function ContactsPage() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="phone" className="block text-sm font-medium text-muted-foreground mb-1">
                       Телефон
                     </label>
                     <input
@@ -124,13 +124,13 @@ export default function ContactsPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-1">
                       Email
                     </label>
                     <input
@@ -139,13 +139,13 @@ export default function ContactsPage() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1">
                       Сообщение
                     </label>
                     <textarea
@@ -154,7 +154,7 @@ export default function ContactsPage() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
                       required
                     />
                   </div>

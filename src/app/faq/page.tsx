@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ChevronDown } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -48,32 +49,32 @@ export default function FAQPage() {
       <Header />
       
       <main className="pt-20">
-        <section className="py-20 bg-gray-50">
+        <section className="section">
           <div className="container">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Часто задаваемые вопросы</h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Ответы на популярные вопросы о наших услугах
               </p>
             </div>
 
             <div className="max-w-3xl mx-auto space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div key={index} className="card">
                   <button
-                    className="w-full px-6 py-4 text-left flex items-center justify-between"
+                    className="w-full text-left flex items-center justify-between"
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   >
                     <span className="text-lg font-medium">{faq.question}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-gray-500 transition-transform ${
+                      className={`w-5 h-5 text-muted-foreground transition-transform ${
                         openIndex === index ? 'transform rotate-180' : ''
                       }`}
                     />
                   </button>
                   {openIndex === index && (
-                    <div className="px-6 pb-4">
-                      <p className="text-gray-600">{faq.answer}</p>
+                    <div className="mt-4">
+                      <p className="text-muted-foreground">{faq.answer}</p>
                     </div>
                   )}
                 </div>
@@ -82,10 +83,10 @@ export default function FAQPage() {
 
             <div className="mt-16 text-center">
               <h2 className="text-3xl font-bold mb-8">Остались вопросы?</h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-muted-foreground mb-8">
                 Свяжитесь с нами, и мы ответим на все ваши вопросы
               </p>
-              <button className="btn btn-primary">Заказать звонок</button>
+              <Button>Заказать звонок</Button>
             </div>
           </div>
         </section>

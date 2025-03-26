@@ -22,11 +22,11 @@ export default function FurniturePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="card p-8">
+              <div className="card">
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <Wrench className="w-7 h-7 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold mb-4 text-card-foreground">Наши услуги</h2>
+                <h2 className="text-2xl font-bold mb-4">Наши услуги</h2>
                 <ul className="space-y-3">
                   <li className="flex items-center text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-2" />
@@ -47,11 +47,11 @@ export default function FurniturePage() {
                 </ul>
               </div>
 
-              <div className="card p-8">
+              <div className="card">
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <Wrench className="w-7 h-7 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold mb-4 text-card-foreground">Преимущества</h2>
+                <h2 className="text-2xl font-bold mb-4">Преимущества</h2>
                 <ul className="space-y-3">
                   <li className="flex items-center text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-2" />

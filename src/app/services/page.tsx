@@ -112,24 +112,24 @@ export default function ServicesPage() {
       <Header />
       
       <main className="pt-20">
-        <section className="py-20 bg-gray-50">
+        <section className="section">
           <div className="container">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Наши услуги
               </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Полный спектр услуг для организации переезда любой сложности
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} className="bg-white rounded-2xl p-8 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div key={index} className="card flex flex-col h-full">
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                     <service.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 text-card-foreground">{service.title}</h2>
+                  <h2 className="text-2xl font-bold mb-4">{service.title}</h2>
                   <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
                   <ul className="space-y-3 mb-8">
                     {service.features.map((feature, featureIndex) => (
@@ -154,11 +154,11 @@ export default function ServicesPage() {
                 Дополнительные услуги
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Box className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">Упаковочные материалы</h3>
+                  <h3 className="text-xl font-bold mb-2">Упаковочные материалы</h3>
                   <p className="text-muted-foreground flex-grow">Качественные материалы для упаковки вещей</p>
                   <Button 
                     className="w-full mt-4" 
@@ -168,11 +168,11 @@ export default function ServicesPage() {
                     Подробнее
                   </Button>
                 </div>
-                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Shield className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">Страхование</h3>
+                  <h3 className="text-xl font-bold mb-2">Страхование</h3>
                   <p className="text-muted-foreground flex-grow">Страхование груза на время перевозки</p>
                   <Button 
                     className="w-full mt-4" 
@@ -182,11 +182,11 @@ export default function ServicesPage() {
                     Подробнее
                   </Button>
                 </div>
-                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Wrench className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">Сборка мебели</h3>
+                  <h3 className="text-xl font-bold mb-2">Сборка мебели</h3>
                   <p className="text-muted-foreground flex-grow">Профессиональная сборка и разборка мебели</p>
                   <Button 
                     className="w-full mt-4" 
@@ -196,11 +196,11 @@ export default function ServicesPage() {
                     Подробнее
                   </Button>
                 </div>
-                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Box className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">Хранение</h3>
+                  <h3 className="text-xl font-bold mb-2">Хранение</h3>
                   <p className="text-muted-foreground flex-grow">Временное хранение вещей</p>
                   <Button 
                     className="w-full mt-4" 

@@ -7,7 +7,7 @@
   --primary-light: #2d6a4f;
   --primary-dark: #081c15;
   --accent: #40916c;
-  --background: #ffffff;
+  --background: #f8fafc;
   --foreground: #1e293b;
   --card: #ffffff;
   --card-foreground: #1e293b;
@@ -39,9 +39,19 @@
   * {
     @apply border-border;
   }
+  html {
+    min-height: 100vh;
+    background-color: var(--background);
+  }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: var(--background);
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: center center;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
@@ -63,6 +73,16 @@
   }
 }
 
+@layer utilities {
+  .bg-grid {
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: center center;
+  }
+}
+
 @layer components {
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
@@ -73,7 +93,7 @@
   }
 
   .card {
-    @apply bg-card rounded-2xl shadow-lg border border-border p-6;
+    @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6;
   }
 
   .btn {

@@ -26,7 +26,7 @@ const services = [
 
 export function AnimatedServices() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="section">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export function AnimatedServices() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Наши услуги
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Мы предлагаем полный спектр услуг по переезду для частных лиц и компаний
           </p>
         </motion.div>
@@ -51,16 +51,16 @@ export function AnimatedServices() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="card"
             >
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
                 <service.icon className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
+              <p className="text-muted-foreground mb-6">{service.description}</p>
               <ul className="space-y-3">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-gray-700">
+                  <li key={feature} className="flex items-center text-muted-foreground">
                     <Shield className="h-4 w-4 text-primary mr-2" />
                     {feature}
                   </li>
