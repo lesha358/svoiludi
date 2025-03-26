@@ -30,11 +30,13 @@ export function Header() {
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false)
-    if (href === '/' || href === '/home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    } else {
-      // Для остальных страниц используем обычную навигацию
-      window.location.href = href
+    if (typeof window !== 'undefined') {
+      // Если это главная страница
+      if (href === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        window.location.href = '/'
+        return
+      }
     }
   }
 
@@ -65,8 +67,10 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick(item.href)
+                  if (item.href === '/') {
+                    e.preventDefault()
+                    handleNavClick(item.href)
+                  }
                 }}
                 className={`text-base font-medium relative group ${
                   isScrolled ? 'text-gray-700' : 'text-gray-700'
@@ -125,8 +129,10 @@ export function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={(e) => {
-                        e.preventDefault()
-                        handleNavClick(item.href)
+                        if (item.href === '/') {
+                          e.preventDefault()
+                          handleNavClick(item.href)
+                        }
                       }}
                       className="text-lg font-medium text-gray-700 hover:text-primary transition-colors px-4"
                     >

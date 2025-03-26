@@ -15,11 +15,15 @@ export default function Home() {
       <ScrollProgress />
       
       <main>
-        <AnimatedHero />
-        <AnimatedServices />
+        <section id="home">
+          <AnimatedHero />
+        </section>
+        <section id="services">
+          <AnimatedServices />
+        </section>
 
         {/* Преимущества */}
-        <section className="section" aria-labelledby="advantages-title">
+        <section id="advantages" className="section" aria-labelledby="advantages-title">
           <div className="container">
             <ScrollAnimation className="text-center mb-16">
               <h2 id="advantages-title" className="mb-4">Почему выбирают нас</h2>
