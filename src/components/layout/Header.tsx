@@ -49,8 +49,14 @@ export function Header() {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            Свои Люди
+          <Link 
+            href="/" 
+            className="flex items-center space-x-3"
+          >
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-2xl font-bold text-white">СЛ</span>
+            </div>
+            <span className="text-xl font-bold text-primary">Свои Люди</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,22 +73,25 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Call Button - Desktop */}
-          <a
-            href="tel:+79857196200"
-            className="hidden md:inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            +7 (985) 719-62-00
-          </a>
-
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-600 hover:text-gray-900"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <a
+              href="tel:+79857196200"
+              className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+            </a>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg transition-colors"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-gray-700" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-700" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
