@@ -60,13 +60,16 @@ export default function Home() {
         </section>
 
         {/* Призыв к действию */}
-        <section className="section bg-primary text-white" aria-labelledby="cta-title">
-          <div className="container">
+        <section className="section relative" aria-labelledby="cta-title">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark">
+            <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10" />
+          </div>
+          <div className="container relative z-10">
             <div className="text-center">
-              <h2 id="cta-title" className="text-3xl font-bold mb-4">
+              <h2 id="cta-title" className="text-3xl font-bold mb-4 text-white">
                 Готовы к переезду?
               </h2>
-              <p className="text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-100">
                 Свяжитесь с нами, и мы поможем организовать ваш переезд быстро и качественно
               </p>
               <Link 
