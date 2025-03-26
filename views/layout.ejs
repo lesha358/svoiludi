@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <%- style %>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-left">
+                    <a href="/" class="logo">
+                        <i class="fas fa-truck"></i>
+                        <span>Свои Люди</span>
+                    </a>
+                </div>
+                <div class="nav-center">
+                    <ul class="nav-links">
+                        <li><a href="/" class="nav-link">Главная</a></li>
+                        <li><a href="/services" class="nav-link">Услуги</a></li>
+                        <li><a href="/about" class="nav-link">О нас</a></li>
+                        <li><a href="/contacts" class="nav-link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <a href="tel:+79001234567" class="phone">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (900) 123-45-67</span>
+                    </a>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <%- body %>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>О компании</h3>
+                    <p>Компания "Свои Люди" предоставляет профессиональные услуги по переезду любой сложности. Мы гарантируем качество, надежность и безопасность вашего имущества.</p>
+                </div>
+                <div class="footer-contacts">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone"></i> +7 (900) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@svoiludi.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, д. 1</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Свои Люди. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <%- script %>
+</body>
+</html> 
