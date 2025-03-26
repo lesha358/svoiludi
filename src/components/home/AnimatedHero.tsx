@@ -7,13 +7,13 @@ import Image from 'next/image'
 
 export function AnimatedHero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center pt-20">
+    <section className="relative min-h-[90vh] flex items-center pt-32 pb-20">
       <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark">
         <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10" />
       </div>
       
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
