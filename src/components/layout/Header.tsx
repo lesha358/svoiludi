@@ -120,29 +120,10 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="md:hidden fixed inset-0 z-50 bg-white"
+              className="md:hidden absolute top-20 left-0 right-0 z-50 bg-white shadow-lg"
             >
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b">
-                  <Link 
-                    href="/" 
-                    className="flex items-center space-x-3"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white">СЛ</span>
-                    </div>
-                    <span className="text-xl font-bold text-primary">Свои Люди</span>
-                  </Link>
-                  <button
-                    className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <X className="h-6 w-6 text-gray-700" />
-                  </button>
-                </div>
-                
-                <nav className="flex-1 overflow-y-auto">
+              <div className="flex flex-col">
+                <nav className="flex-1">
                   <div className="flex flex-col space-y-1 p-4">
                     {navItems.map((item) => (
                       <Link
