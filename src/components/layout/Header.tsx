@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -26,6 +27,14 @@ export function Header() {
     { href: '/about', label: 'О нас' },
     { href: '/contacts', label: 'Контакты' }
   ]
+
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false)
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <header
@@ -53,6 +62,10 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleNavClick(item.href)
+                }}
                 className={`text-base font-medium relative group ${
                   isScrolled ? 'text-gray-700' : 'text-gray-700'
                 }`}
@@ -94,22 +107,35 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 bg-white shadow-lg rounded-lg mt-2">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-lg font-medium text-gray-700 hover:text-primary transition-colors px-4"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden"
+            >
+              <nav className="py-4 bg-white shadow-lg rounded-lg mt-2">
+                <div className="flex flex-col space-y-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        handleNavClick(item.href)
+                      }}
+                      className="text-lg font-medium text-gray-700 hover:text-primary transition-colors px-4"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   )
