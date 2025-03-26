@@ -2,51 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 142.1 76.2% 36.3%;
-    --secondary-foreground: 355.7 100% 97.3%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 142.1 76.2% 36.3%;
-    --accent-foreground: 355.7 100% 97.3%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 142.1 76.2% 36.3%;
-    --radius: 0.5rem;
-  }
+:root {
+  --primary: #1b4332;
+  --primary-light: #2d6a4f;
+  --primary-dark: #081c15;
+  --accent: #40916c;
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --popover: #ffffff;
+  --popover-foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #1b4332;
+  --radius: 0.75rem;
+}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 142.1 70.6% 45.3%;
-    --secondary-foreground: 144.9 80.4% 10%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 142.1 70.6% 45.3%;
-    --accent-foreground: 144.9 80.4% 10%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 142.4 71.8% 29.2%;
-  }
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #2d6a4f;
 }
 
 @layer base {
@@ -54,41 +40,64 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+  h3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+  h4 {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  p {
+    @apply leading-relaxed text-base sm:text-lg;
   }
 }
 
 @layer components {
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
   .card {
-    @apply bg-card rounded-2xl shadow-lg border border-border;
-  }
-
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-accent;
-  }
-
-  .btn-secondary {
-    @apply bg-accent text-white hover:bg-primary;
-  }
-
-  .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
-  }
-
-  .btn-ghost {
-    @apply hover:bg-accent hover:text-white;
+    @apply bg-card rounded-2xl shadow-lg border border-border p-6;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background px-4 py-2;
   }
 
-  .section {
-    @apply py-16 sm:py-20 lg:py-24;
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-accent text-white hover:bg-primary-light shadow-sm;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-sm;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-accent/10 text-accent hover:text-primary;
+  }
+
+  .btn-link {
+    @apply underline-offset-4 hover:underline text-primary;
   }
 
   .input {
