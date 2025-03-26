@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Users } from 'lucide-react'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -29,13 +29,21 @@ export function Header() {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
+        isScrolled 
+          ? 'bg-white/80 backdrop-blur-md shadow-sm' 
+          : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors">
-            Свои Люди
+          <Link 
+            href="/" 
+            className="flex items-center space-x-2 text-2xl font-bold text-primary hover:text-primary-dark transition-colors"
+          >
+            <Users className="w-8 h-8" />
+            <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+              Свои Люди
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

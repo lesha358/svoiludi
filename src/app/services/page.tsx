@@ -4,8 +4,34 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Truck, Home, Building, Package, Users, Box, Wrench, Shield, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 export default function ServicesPage() {
+  const router = useRouter()
+
+  const handleOrder = (service: string) => {
+    router.push('/contacts')
+  }
+
+  const handleDetails = (service: string) => {
+    switch (service) {
+      case 'Упаковочные материалы':
+        router.push('/services/packaging')
+        break
+      case 'Страхование':
+        router.push('/services/insurance')
+        break
+      case 'Сборка мебели':
+        router.push('/services/furniture')
+        break
+      case 'Хранение':
+        router.push('/services/storage')
+        break
+      default:
+        router.push('/contacts')
+    }
+  }
+
   const services = [
     {
       icon: Building,
@@ -86,20 +112,20 @@ export default function ServicesPage() {
       <Header />
       
       <main className="pt-20">
-        <section className="section bg-background">
+        <section className="py-20 bg-gray-50">
           <div className="container">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Наши услуги
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Полный спектр услуг для организации переезда любой сложности
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} className="card p-8 flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                <div key={index} className="bg-white rounded-2xl p-8 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                     <service.icon className="w-7 h-7 text-primary" />
                   </div>
@@ -113,47 +139,76 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-auto">Заказать услугу</Button>
+                  <Button 
+                    className="w-full mt-auto" 
+                    onClick={() => handleOrder(service.title)}
+                  >
+                    Заказать услугу
+                  </Button>
                 </div>
               ))}
             </div>
 
             <div className="mt-16 text-center">
-              <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold mb-8">
                 Дополнительные услуги
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="card p-6 flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Box className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-card-foreground">Упаковочные материалы</h3>
                   <p className="text-muted-foreground flex-grow">Качественные материалы для упаковки вещей</p>
-                  <Button className="w-full mt-4" variant="outline">Подробнее</Button>
+                  <Button 
+                    className="w-full mt-4" 
+                    variant="outline" 
+                    onClick={() => handleDetails('Упаковочные материалы')}
+                  >
+                    Подробнее
+                  </Button>
                 </div>
-                <div className="card p-6 flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Shield className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-card-foreground">Страхование</h3>
                   <p className="text-muted-foreground flex-grow">Страхование груза на время перевозки</p>
-                  <Button className="w-full mt-4" variant="outline">Подробнее</Button>
+                  <Button 
+                    className="w-full mt-4" 
+                    variant="outline"
+                    onClick={() => handleDetails('Страхование')}
+                  >
+                    Подробнее
+                  </Button>
                 </div>
-                <div className="card p-6 flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Wrench className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-card-foreground">Сборка мебели</h3>
                   <p className="text-muted-foreground flex-grow">Профессиональная сборка и разборка мебели</p>
-                  <Button className="w-full mt-4" variant="outline">Подробнее</Button>
+                  <Button 
+                    className="w-full mt-4" 
+                    variant="outline"
+                    onClick={() => handleDetails('Сборка мебели')}
+                  >
+                    Подробнее
+                  </Button>
                 </div>
-                <div className="card p-6 flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-white rounded-2xl p-6 flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Box className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-card-foreground">Хранение</h3>
                   <p className="text-muted-foreground flex-grow">Временное хранение вещей</p>
-                  <Button className="w-full mt-4" variant="outline">Подробнее</Button>
+                  <Button 
+                    className="w-full mt-4" 
+                    variant="outline"
+                    onClick={() => handleDetails('Хранение')}
+                  >
+                    Подробнее
+                  </Button>
                 </div>
               </div>
             </div>

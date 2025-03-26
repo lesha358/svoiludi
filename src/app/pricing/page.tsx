@@ -4,8 +4,15 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 export default function PricingPage() {
+  const router = useRouter()
+
+  const handleOrder = (tariff: string) => {
+    router.push('/contacts')
+  }
+
   return (
     <>
       <Header />
@@ -38,7 +45,12 @@ export default function PricingPage() {
                     4 часа работы включено
                   </li>
                 </ul>
-                <Button className="w-full mt-auto">Заказать</Button>
+                <Button 
+                  className="w-full mt-auto"
+                  onClick={() => handleOrder('Бюджет')}
+                >
+                  Заказать
+                </Button>
               </div>
 
               {/* Тариф "Стандарт" */}
@@ -65,7 +77,12 @@ export default function PricingPage() {
                     Разборка/сборка мебели
                   </li>
                 </ul>
-                <Button className="w-full mt-auto">Заказать</Button>
+                <Button 
+                  className="w-full mt-auto"
+                  onClick={() => handleOrder('Стандарт')}
+                >
+                  Заказать
+                </Button>
               </div>
 
               {/* Тариф "Престиж" */}
@@ -93,7 +110,12 @@ export default function PricingPage() {
                     Вывоз мусора после переезда
                   </li>
                 </ul>
-                <Button className="w-full mt-auto">Заказать</Button>
+                <Button 
+                  className="w-full mt-auto"
+                  onClick={() => handleOrder('Престиж')}
+                >
+                  Заказать
+                </Button>
               </div>
             </div>
 

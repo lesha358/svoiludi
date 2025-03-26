@@ -75,7 +75,7 @@ export default function Home() {
                   Заказать переезд
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-                <a href="tel:+79001234567" className="btn border-2 border-white text-white hover:bg-white/10">
+                <a href="tel:+79857196200" className="btn border-2 border-white text-white hover:bg-white/10">
                   Позвонить нам
                 </a>
               </div>

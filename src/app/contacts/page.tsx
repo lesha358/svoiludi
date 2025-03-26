@@ -45,39 +45,39 @@ export default function ContactsPage() {
               {/* Контактная информация */}
               <div className="space-y-8">
                 <div className="bg-white rounded-2xl p-8 shadow-lg">
-                  <h2 className="text-2xl font-bold mb-6">Наши контакты</h2>
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Phone className="h-6 w-6 text-primary" />
+                  <h2 className="text-xl font-bold mb-6">Наши контакты</h2>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Phone className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900">Телефон</h3>
-                        <a href="tel:+79001234567" className="text-gray-600 hover:text-primary transition-colors">
-                          +7 (900) 123-45-67
+                        <h3 className="text-sm font-medium text-gray-500">Телефон</h3>
+                        <a href="tel:+79857196200" className="text-base text-gray-900 hover:text-primary transition-colors">
+                          +7 (985) 719-62-00
                         </a>
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Mail className="h-6 w-6 text-primary" />
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Mail className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900">Email</h3>
-                        <a href="mailto:info@svoiludi.ru" className="text-gray-600 hover:text-primary transition-colors">
+                        <h3 className="text-sm font-medium text-gray-500">Email</h3>
+                        <a href="mailto:info@svoiludi.ru" className="text-base text-gray-900 hover:text-primary transition-colors">
                           info@svoiludi.ru
                         </a>
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                        <MapPin className="h-6 w-6 text-primary" />
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <MapPin className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900">Адрес</h3>
-                        <p className="text-gray-600">
+                        <h3 className="text-sm font-medium text-gray-500">Адрес</h3>
+                        <p className="text-base text-gray-900">
                           г. Москва, ул. Примерная, д. 123
                         </p>
                       </div>
@@ -86,11 +86,11 @@ export default function ContactsPage() {
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 shadow-lg">
-                  <h2 className="text-2xl font-bold mb-6">Режим работы</h2>
+                  <h2 className="text-xl font-bold mb-6">Режим работы</h2>
                   <div className="space-y-2">
-                    <p className="text-gray-600">Пн-Пт: 9:00 - 20:00</p>
-                    <p className="text-gray-600">Сб: 10:00 - 18:00</p>
-                    <p className="text-gray-600">Вс: Выходной</p>
+                    <p className="text-base text-gray-600">Пн-Пт: 9:00 - 20:00</p>
+                    <p className="text-base text-gray-600">Сб: 10:00 - 18:00</p>
+                    <p className="text-base text-gray-600">Вс: Выходной</p>
                   </div>
                 </div>
               </div>
