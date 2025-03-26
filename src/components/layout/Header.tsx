@@ -30,7 +30,7 @@ export function Header() {
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false)
-    if (href === '/') {
+    if (href === '/' || href === '/home') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
       // Для остальных страниц используем обычную навигацию
