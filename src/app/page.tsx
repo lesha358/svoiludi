@@ -16,69 +16,66 @@ export default function Home() {
         <AnimatedServices />
 
         {/* Преимущества */}
-        <section className="section">
+        <section className="section" aria-labelledby="advantages-title">
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="mb-4">Почему выбирают нас</h2>
+              <h2 id="advantages-title" className="mb-4">Почему выбирают нас</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Мы предлагаем комплексный подход к переезду с гарантией качества
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="card text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Shield className="h-8 w-8 text-primary" />
+              <article className="card">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="mb-4">Гарантия сохранности</h3>
+                <h3 className="text-xl font-bold mb-2">Надежность</h3>
                 <p className="text-muted-foreground">
-                  Все ваши вещи застрахованы и находятся под постоянным контролем
+                  Гарантируем сохранность ваших вещей и безопасность переезда
                 </p>
-              </div>
+              </article>
 
-              <div className="card text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Clock className="h-8 w-8 text-primary" />
+              <article className="card">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <Clock className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="mb-4">Пунктуальность</h3>
+                <h3 className="text-xl font-bold mb-2">Пунктуальность</h3>
                 <p className="text-muted-foreground">
-                  Приезжаем точно в назначенное время и соблюдаем все сроки
+                  Строгое соблюдение сроков и графиков переезда
                 </p>
-              </div>
+              </article>
 
-              <div className="card text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-8 w-8 text-primary" />
+              <article className="card">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="mb-4">Опытная команда</h3>
+                <h3 className="text-xl font-bold mb-2">Опыт</h3>
                 <p className="text-muted-foreground">
-                  Наши специалисты имеют многолетний опыт работы
+                  Профессиональная команда с многолетним опытом
                 </p>
-              </div>
+              </article>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section bg-gradient-to-br from-primary to-primary-dark text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10" />
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-6">
-                Готовы начать новый этап в жизни?
+        {/* Призыв к действию */}
+        <section className="section bg-primary text-white" aria-labelledby="cta-title">
+          <div className="container">
+            <div className="text-center">
+              <h2 id="cta-title" className="text-3xl font-bold mb-4">
+                Готовы к переезду?
               </h2>
-              <p className="text-lg mb-8 text-white/90">
-                Свяжитесь с нами прямо сейчас и получите бесплатную консультацию
+              <p className="text-lg mb-8 max-w-2xl mx-auto">
+                Свяжитесь с нами, и мы поможем организовать ваш переезд быстро и качественно
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contacts" className="btn bg-white text-primary hover:bg-white/90">
-                  Заказать переезд
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <a href="tel:+79857196200" className="btn border-2 border-white text-white hover:bg-white/10">
-                  Позвонить нам
-                </a>
-              </div>
+              <Link 
+                href="/contacts" 
+                className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-white/90 transition-colors"
+              >
+                Связаться с нами
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         </section>

@@ -112,10 +112,10 @@ export default function ServicesPage() {
       <Header />
       
       <main className="pt-20">
-        <section className="section">
+        <section className="section" aria-labelledby="services-title">
           <div className="container">
             <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 id="services-title" className="text-4xl md:text-5xl font-bold mb-4">
                 Наши услуги
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export default function ServicesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} className="card flex flex-col h-full">
+                <article key={index} className="card flex flex-col h-full">
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                     <service.icon className="w-7 h-7 text-primary" />
                   </div>
@@ -145,16 +145,16 @@ export default function ServicesPage() {
                   >
                     Заказать услугу
                   </Button>
-                </div>
+                </article>
               ))}
             </div>
 
             <div className="mt-16 text-center">
-              <h2 className="text-3xl font-bold mb-8">
+              <h2 className="text-3xl font-bold mb-8" id="additional-services">
                 Дополнительные услуги
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="card flex flex-col h-full">
+                <article className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Box className="w-6 h-6 text-primary" />
                   </div>
@@ -167,8 +167,8 @@ export default function ServicesPage() {
                   >
                     Подробнее
                   </Button>
-                </div>
-                <div className="card flex flex-col h-full">
+                </article>
+                <article className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Shield className="w-6 h-6 text-primary" />
                   </div>
@@ -181,8 +181,8 @@ export default function ServicesPage() {
                   >
                     Подробнее
                   </Button>
-                </div>
-                <div className="card flex flex-col h-full">
+                </article>
+                <article className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Wrench className="w-6 h-6 text-primary" />
                   </div>
@@ -195,8 +195,8 @@ export default function ServicesPage() {
                   >
                     Подробнее
                   </Button>
-                </div>
-                <div className="card flex flex-col h-full">
+                </article>
+                <article className="card flex flex-col h-full">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                     <Box className="w-6 h-6 text-primary" />
                   </div>
@@ -209,7 +209,7 @@ export default function ServicesPage() {
                   >
                     Подробнее
                   </Button>
-                </div>
+                </article>
               </div>
             </div>
           </div>
